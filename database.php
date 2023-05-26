@@ -180,6 +180,80 @@ if (isset($_POST['subscription_email'])) {
   // echo json_encode(['success' => true]);
 }
 
+if (isset($_POST['listingdata'])) {
+  // Decode the JSON string to retrieve the review object
+  $add_listingdata_info = json_decode($_POST['listingdata'], true);
+
+  $tableName = $add_listingdata_info["table_name"];
+
+  // Access the properties of the review object
+  $property_title = mysqli_real_escape_string($conn, $add_listingdata_info['property_title']);
+  $property_price = mysqli_real_escape_string($conn, $add_listingdata_info['property_price']);
+  $property_status = mysqli_real_escape_string($conn, $add_listingdata_info['property_status']);
+  $property_seller_name = mysqli_real_escape_string($conn, $add_listingdata_info['property_seller_name']);
+  $property_beds = mysqli_real_escape_string($conn, $add_listingdata_info['property_bed']);
+  $property_baths = mysqli_real_escape_string($conn, $add_listingdata_info['property_bath']);
+  $property_sqft = mysqli_real_escape_string($conn, $add_listingdata_info['property_sqft']);
+  $property_seller_img = mysqli_real_escape_string($conn, $add_listingdata_info['property_seller_img']);
+  $property_img = mysqli_real_escape_string($conn, $add_listingdata_info['property_img']);
+  $property_description = mysqli_real_escape_string($conn, $add_listingdata_info['property_concern']);
+
+    // Prepare the INSERT statement based on the table name
+    if ($tableName === "properties_collection_basic") {
+    // Shift existing data to subsequent rows
+    $conn->query("UPDATE properties_collection_basic SET id = id   + 1 ORDER BY id   DESC");
+
+  // Prepare and bind the statement to prevent SQL injection
+  $stmt1 = $conn->prepare("INSERT INTO properties_collection_basic (id, name, price, status, seller_name, beds, baths, sqft, seller_img, image, small_description)
+   VALUES (1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE name = VALUES(name), price = VALUES(price), status = VALUES(status), seller_name = VALUES(seller_name), beds = VALUES(beds), baths = VALUES(baths), sqft = VALUES(sqft), seller_img = VALUES(seller_img), image = VALUES(image), small_description = VALUES(small_description)");
+
+  $stmt1->bind_param("ssssssssss", $property_title, $property_price, $property_status, $property_seller_name, $property_beds, $property_baths, $property_sqft, $property_seller_img, $property_img, $property_description);
+
+    // Execute the statement for properties_collection_basic table
+    $stmt1->execute();
+
+    // Close the prepared statement for properties_collection_basic table
+    $stmt1->close();
+
+       // Shift existing data to subsequent rows
+       $conn->query("UPDATE main_properties_collection SET all_properties_id = all_properties_id   + 1 ORDER BY all_properties_id   DESC");
+
+       // Prepare and bind the statement to prevent SQL injection
+       $stmt2 = $conn->prepare("INSERT INTO main_properties_collection (all_properties_id, name, price, status, seller_name, beds, baths, sqft, seller_img, image, small_description)
+        VALUES (1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE name = VALUES(name), price = VALUES(price), status = VALUES(status), seller_name = VALUES(seller_name), beds = VALUES(beds), baths = VALUES(baths), sqft = VALUES(sqft), seller_img = VALUES(seller_img), image = VALUES(image), small_description = VALUES(small_description)"); 
+
+  $stmt2->bind_param("ssssssssss", $property_title, $property_price, $property_status, $property_seller_name, $property_beds, $property_baths, $property_sqft, $property_seller_img, $property_img, $property_description);
+
+      // Execute the statement for main_properties_collection table
+      $stmt2->execute();
+
+      // Close the prepared statement for main_properties_collection table
+      $stmt2->close();
+
+   }
+     else if ($tableName === "main_properties_collection") {
+    // Shift existing data to subsequent rows
+    $conn->query("UPDATE main_properties_collection SET all_properties_id = all_properties_id   + 1 ORDER BY all_properties_id   DESC");
+
+  // Prepare and bind the statement to prevent SQL injection
+  $stmt = $conn->prepare("INSERT INTO main_properties_collection (all_properties_id, name, price, status, seller_name, beds, baths, sqft, seller_img, image, small_description)
+   VALUES (1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE name = VALUES(name), price = VALUES(price), status = VALUES(status), seller_name = VALUES(seller_name), beds = VALUES(beds), baths = VALUES(baths), sqft = VALUES(sqft), seller_img = VALUES(seller_img), image = VALUES(image), small_description = VALUES(small_description)");   
+    }
+
+
+  $stmt->bind_param("ssssssssss", $property_title, $property_price, $property_status, $property_seller_name, $property_beds, $property_baths, $property_sqft, $property_seller_img, $property_img, $property_description);
+
+  // Execute the statement
+  $stmt->execute();
+
+  // Close the prepared statement
+  $stmt->close();
+
+  // Set the content type header to application/json
+  header('Content-Type: application/json');
+
+}
+
 // if (isset($_POST['add_listing_message1'])) {
 
 //   // Decode the JSON string to retrieve the review object
