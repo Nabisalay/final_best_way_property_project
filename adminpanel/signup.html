@@ -23,7 +23,7 @@
 
             <!-- custom.css -->
 
-            <link rel="stylesheet" href="styles.css">
+            <link rel="stylesheet" href="adminstyles.css">
 
 
 
@@ -63,19 +63,19 @@
     <div class="wrapper">
         <div class="main-container">
 
-              <div class="left-side ">
-                <form action="" onsubmit="login(event)">
+              <div class="left-side text-center login-container">
+                <form class="" action="" onsubmit="login(event)">
                     <div class="input-group mb-3">
-                        <div class="name-input mb-4 position-relative">
-                            <label class="mb-2" for="username">Enter Username</label>
-                            <input id="username" type="text" class="input-field" placeholder="Enter the Username">
-                            <i class="fa-solid fa-user"></i>
+                        <div class="name-input mb-4 position-relative ">
+                            <label class="mb-2 login-label" for="username">Enter Username</label>
+                            <input id="username" type="text" class="input-field r" placeholder="Enter the Username">
+                            <i class="fa-solid fa-user login-icon"></i>
 
                         </div>
-                        <div class="name-input mb-4 position-relative">
-                            <label class="mb-2" for="password">Enter Password</label>
+                        <div class="name-input mb-4 position-relative ">
+                            <label class="mb-2 login-label" for="password">Enter Password</label>
                             <input id="password" type="password" class="input-field" placeholder="Enter the Password">
-                            <i class="fa-solid fa-eye-slash"
+                            <i class="fa-solid fa-eye-slash login-icon"
                             onmousedown="showpassword()"
                             onmouseup="hidepassword()"></i>
                         </div>

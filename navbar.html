@@ -38,7 +38,7 @@
            >Testimonials</a>
           </li>
           <li class="nav-item ">
-            <a  class="nav-link text-white one py-1 py-md-2" data-page="FAQS" href="FAQS.html" 
+            <a  class="nav-link text-white one py-1 py-md-2" data-page="faqs" href="faqs.html" 
            >FAQS</a>
           </li>
     
@@ -75,6 +75,10 @@ let topNav = document.querySelector('#top-nav-hide');
 let mainNav = document.querySelector('#main-nav-color');
 let nav = document.querySelector('#btm-nav');
 
+// Set the initial background color of mainNav to transparent
+
+
+
 // Get the initial scroll position
 let prevScrollpos = window.pageYOffset;
 
@@ -82,11 +86,14 @@ let prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
   // Get the current page URL
   var currentUrl = window.location.href;
+  const indexfile = document.querySelector('.main-file');
+
   
+  let currentScrollPos = window.pageYOffset;
+  if(currentUrl){
   // Check if the current page is the home page
-  if (currentUrl.indexOf('index.html') > -1) {
+  if (currentUrl.indexOf('index.html') > -1 || indexfile) {
     // Get the current scroll position
-    let currentScrollPos = window.pageYOffset;
     
     // Check if the user has scrolled down the page
     if (prevScrollpos > currentScrollPos) {
@@ -94,7 +101,7 @@ window.onscroll = function() {
       topNav.style.display = 'flex';
       mainNav.style.background = 'transparent';
       nav.classList.remove('scroll-up');
-    } else if (currentScrollPos > 500) {
+    } else if (currentScrollPos > 450) {
       // If yes, hide the top nav
       topNav.style.display = 'none';
       mainNav.style.background = '#000';
@@ -102,8 +109,37 @@ window.onscroll = function() {
     }
     
     // Update the previous scroll position
-    prevScrollpos = 500;
+    prevScrollpos = 450;
+  }else if(currentUrl.indexOf('properties-details.html') > -1){
+    if (prevScrollpos > currentScrollPos) {
+      // If not, show the top nav
+      topNav.style.display = 'flex';
+      nav.classList.remove('scroll-up');
+    } else if (currentScrollPos > 150) {
+      // If yes, hide the top nav
+      topNav.style.display = 'none';
+      nav.classList.add('scroll-up');
+    }
+    
+    // Update the previous scroll position
+    prevScrollpos = 150;
   }
+  else {
+        // Check if the user has scrolled down the page
+        if (prevScrollpos > currentScrollPos) {
+      // If not, show the top nav
+      topNav.style.display = 'flex';
+      nav.classList.remove('scroll-up');
+    } else if (currentScrollPos > 300) {
+      // If yes, hide the top nav
+      topNav.style.display = 'none';
+      nav.classList.add('scroll-up');
+    }
+    
+    // Update the previous scroll position
+    prevScrollpos = 300;
+  }
+}
 }
     
 
@@ -153,9 +189,9 @@ window.onscroll = function() {
 
     // Check if the URL contains "FAQS.html" and add "active" class to the corresponding link
 
-    if (currentUrl.indexOf('FAQS.html') > -1) {
+    if (currentUrl.indexOf('faqs.html') > -1) {
       $('.one').removeClass('active-page');
-      $('a[data-page="FAQS"]').addClass('active-page');
+      $('a[data-page="faqs"]').addClass('active-page');
     }
   
     // Check if the URL contains "about us.html" and add "active" class to the corresponding link

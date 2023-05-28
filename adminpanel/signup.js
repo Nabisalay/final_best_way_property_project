@@ -423,7 +423,7 @@ function newsletter() {
 }
 
 // this is for the add listing Form info 
-function addlistinginfo() {
+function addlistinginfomsg() {
   const main_data_base = fetch('serverscript.php')
     .then(response => response.json())
     .then(contact_form_data => {
@@ -500,8 +500,7 @@ function addlistinginfo() {
 
         // Append the row to the table body
         tableBody.appendChild(row);
-
-       
+  
 
       });
 
@@ -533,16 +532,16 @@ container.classList.add('add-listing-container', 'd-flex', 'justify-content-arou
 
 // Create the "Add property to trending list" div
 const trendingPropertyDiv = document.createElement('div');
-trendingPropertyDiv.classList.add('trending-property', 'p-2');
-trendingPropertyDiv.textContent = 'See trending properties list ';
+trendingPropertyDiv.classList.add('trending-property', 'p-2', 'listing-btn');
+trendingPropertyDiv.textContent = 'See trending list ';
 trendingPropertyDiv.onclick = function(event) {
   viewlisting(event);
 };
 
 // Create the "Add property to Listing" div
 const propertyListingDiv = document.createElement('div');
-propertyListingDiv.classList.add('property-listing', 'p-2');
-propertyListingDiv.textContent = 'See all properties List';
+propertyListingDiv.classList.add('property-listing', 'p-2', 'listing-btn');
+propertyListingDiv.textContent = 'See all List';
 propertyListingDiv.onclick = function(event) {
   viewlisting(event);
 };
@@ -694,6 +693,7 @@ function viewlisting(event) {
   // Clear the container before appending the table
   leftSideContainer.innerText = '';
 
+
   const dashbord = document.querySelector('.dashbord');
 
   dashbord.innerHTML = 'Add Properties Listing';
@@ -703,16 +703,16 @@ container.classList.add('add-listing-container', 'd-flex', 'justify-content-arou
 
 // Create the "Add property to trending list" div
 const trendingPropertyDiv = document.createElement('div');
-trendingPropertyDiv.classList.add('trending-property', 'p-2');
-trendingPropertyDiv.textContent = 'Add properties to trending list ';
+trendingPropertyDiv.classList.add('trending-property', 'p-2', 'listing-btn');
+trendingPropertyDiv.textContent = 'Add to trending list ';
 trendingPropertyDiv.onclick = function(event) {
   addlistingform(event);
 };
 
 // Create the "Add property to Listing" div
 const propertyListingDiv = document.createElement('div');
-propertyListingDiv.classList.add('property-listing', 'p-2');
-propertyListingDiv.textContent = 'Add properties to all properties List';
+propertyListingDiv.classList.add('property-listing', 'p-2', 'listing-btn');
+propertyListingDiv.textContent = 'Add to all properties List';
 propertyListingDiv.onclick = function(event) {
 addlistingform(event);
 };
@@ -740,6 +740,9 @@ function addlistingform(event){
     // const dashbord = document.querySelector('.dashbord');
   
     // dashbord.innerHTML = 'Add Properties Listing';
+    const leftsidewrapper = document.querySelector('.left-side');
+
+    leftsidewrapper.style.overflow = 'scroll';
 
   const container = document.createElement('div');  
   container.classList.add('add-listing-input-field');
@@ -747,6 +750,7 @@ function addlistingform(event){
 // Create a new form element
 const form = document.createElement("form");
 form.classList.add('listing-form-container');
+form.id = 'listing-form-special'
 container.appendChild(form);
 
 
@@ -1088,9 +1092,10 @@ reader2.addEventListener('load', function() {
           // Handle the success response
           confirm('Your Review has been saved successfully. You can see it on the page and if you do not see it, please try refreshing the page.');
           console.log(`This is json img: ${JSON.stringify(listingdata['property_seller_img'])}`);
-
-        // After the data is saved in main_properties_collection, create input forms for other tables
-        createOtherInputForms(tableName);
+const form = document.getElementById('listing-form-special')
+if(form){
+  form.reset();
+}
         },
         error: function(xhr, status, error) {
           // Handle the error response
@@ -1100,61 +1105,132 @@ reader2.addEventListener('load', function() {
     }
   }
 
-
-  function createOtherInputForms(tableName) {
-    // Create an input form for the property_images table
-   
-      const imageFormContainer = document.createElement('div');
-      // Customize the container and input fields as per your requirements
-      // ...
-  
-      // Append the form container to the desired location on the page
-      // ...
-   
-  
-    // Create an input form for the interior_details table
-    
-      const interiorFormContainer = document.createElement('div');
-      // Customize the container and input fields as per your requirements
-      // ...
-  
-      // Append the form container to the desired location on the page
-      // ...
-    
-  
-    // Create an input form for the property_features table
-    
-      const featuresFormContainer = document.createElement('div');
-      // Customize the container and input fields as per your requirements
-      // ...
-  
-      // Append the form container to the desired location on the page
-      // ...
-   
-  
-    // Create an input form for the video_details table
-    
-      const videoFormContainer = document.createElement('div');
-      // Customize the container and input fields as per your requirements
-      // ...
-  
-      // Append the form container to the desired location on the page
-      // ...
-    
-  
-    // Create an input form for the previous_year_values table
-
-      const previousYearFormContainer = document.createElement('div');
-      // Customize the container and input fields as per your requirements
-      // ...
-  
-      // Append the form container to the desired location on the page
-      // ...
-   
-  }
-  // console.log(listingdata);
-  // alert(listingdata)
-  // Submit the form if all fields are filled.
-  // return true;
+  return true;
 
 }
+
+//   function createOtherInputForms(tableName) {
+//     // Create an input form for the property_images table
+
+//         // Get the left-side-container element
+//         const leftSideContainer = document.getElementById('left-side-container');
+
+//         // Clear the container before appending the table
+//         leftSideContainer.innerHTML = '';
+      
+//         const dashbord = document.querySelector('.dashbord');
+      
+//         dashbord.innerHTML = 'Add Further details of properties';
+   
+//       const further_details_Container = document.createElement('div');
+//       further_details_Container.classList.add('further-details');
+
+//       const headingcontainer = document.createElement('div');
+//       headingcontainer.classList.add('image-heading-container');
+
+//       further_details_Container.appendChild(headingcontainer);
+
+//       const imgheading = document.createElement('h4');
+//       imgheading.innerText = 'Add property images';
+
+//       headingcontainer.appendChild(imgheading);
+
+//       const imgcontainer = document.createElement('form');
+//       imgcontainer.classList.add('images-container');
+
+//       further_details_Container.appendChild(imgcontainer);
+
+
+//       // Create a new form element
+// const form_group1 = document.createElement('div');
+// form_group1.classList.add('form-group', 'row', 'contact-row')
+
+// // Create a new form element
+// const form_group2 = document.createElement('div');
+// form_group2.classList.add('form-group', 'row', 'contact-row')
+
+// imgcontainer.appendChild(form_group1);
+// imgcontainer.appendChild(form_group2);
+
+// // Create a status container element
+// const img1 = document.createElement('div');
+// img1.classList.add('col-sm-6', 'mb-1', 'mb-sm-3');
+
+// // create a price container element 
+// const img2 = document.createElement('div');
+// img2.classList.add('col-sm-6', 'mb-1', 'mb-sm-3');
+
+// // append them to the second form group
+// form_group1.appendChild(img1);
+// form_group1.appendChild(img2);
+
+// // Create a status container element
+// const img3 = document.createElement('div');
+// img3.classList.add('col-sm-6', 'mb-1', 'mb-sm-3');
+
+// // create a price container element 
+// const img4 = document.createElement('div');
+// img4.classList.add('col-sm-6', 'mb-1', 'mb-sm-3');
+
+// // append them to the second form group
+// form_group2.appendChild(img3);
+// form_group2.appendChild(img4);
+
+//       const img1label = document.createElement('label');
+//       img1label.classList.add('mb-1');
+//       img1label.innerText = 'Select first Image*';
+//       img1label.id = 'seller_imglabel';
+
+// const img1nput = document.createElement('input');
+// img1nput.classList.add('add-listing-input');
+// img1nput.type = 'file';
+// img1nput.id = 'seller_imgnput';
+
+// img1.appendChild(img1label);
+// img1.appendChild(img1nput);
+
+//       const img2label = document.createElement('label');
+//       img2label.classList.add('mb-1');
+//       img2label.innerText = 'Select Second Image*';
+//       img2label.id = 'seller_imglabel';
+
+// const img2nput = document.createElement('input');
+// img2nput.classList.add('add-listing-input');
+// img2nput.type = 'file';
+// img2nput.id = 'seller_imgnput';
+
+// img2.appendChild(img2label);
+// img2.appendChild(img2nput);
+
+//       const img3label = document.createElement('label');
+//       img3label.classList.add('mb-1');
+//       img3label.innerText = 'Select third Image*';
+//       img3label.id = 'seller_imglabel';
+
+// const img3nput = document.createElement('input');
+// img3nput.classList.add('add-listing-input');
+// img3nput.type = 'file';
+// img3nput.id = 'seller_imgnput';
+
+// img3.appendChild(img3label);
+// img3.appendChild(img3nput);
+
+//       const img4label = document.createElement('label');
+//       img4label.classList.add('mb-1');
+//       img4label.innerText = 'Select third Image*';
+//       img4label.id = 'seller_imglabel';
+
+// const img4nput = document.createElement('input');
+// img4nput.classList.add('add-listing-input');
+// img4nput.type = 'file';
+// img4nput.id = 'seller_imgnput';
+
+// img4.appendChild(img4label);
+// img4.appendChild(img4nput);
+
+// leftSideContainer.appendChild(further_details_Container)
+
+
+   
+  
+

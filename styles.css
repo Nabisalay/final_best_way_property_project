@@ -16,27 +16,27 @@ background-color: #F7F7F7;
 
 }
 .body{
-  padding-top: 170px;
+  padding-top: 150px;
   background-color: #F7F7F7;
 }
 @media(max-width: 767px){
   .body{
-    padding-top: 108px;
+    padding-top: 90px;
   }
 }
 @media(max-width: 560px){
   .body{
-    padding-top: 88px;
+    padding-top: 80px;
   }
 }
 @media(max-width: 475px){
   .body{
-    padding-top: 75px;
+    padding-top: 60px;
   }
 }
 @media(max-width: 370px){
   .body{
-    padding-top: 65px;
+    padding-top: 50px;
   }
 }
 .body #navbar-container #main-nav-color{
@@ -93,7 +93,7 @@ input[type="search"]:focus {
 
 input[ type= "search"]::placeholder{
   color: #fff;
-  font-size: 20px; 
+  font-size: 17px; 
 }
 
 input[type="search"]::-webkit-search-cancel-button {
@@ -129,7 +129,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 /* this is to increase the font size of nav item  */
 .navbar-dark .navbar-nav .nav-link{
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover{
@@ -139,7 +139,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .logo-width {
-  width: 5rem;
+  width: 4rem;
   height: auto;
 }
 
@@ -167,7 +167,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 /* this is to arjust the size of logo icon  */
 .logo-width {
-  width: 4rem;
+  width: 3rem;
   height: auto;
 }
 /* this is for the text of search placeholder  */
@@ -316,8 +316,8 @@ input[ type= "search"]::placeholder{
     display: flex;
     align-items: center;
     justify-content: center;
-    width:5%;
-    height: 8%;
+    width:4%;
+    height: 7%;
     border-radius: 50%;
     padding: 0;
     color: #fff;
@@ -391,7 +391,7 @@ input[ type= "search"]::placeholder{
 /* home page main heading  */
 .home-pg-main-heading{
   color: var(--text-theme);
-  font-size: 50px;
+  font-size: 3rem;
 }
 
 /* this is for the collection title  */
@@ -403,7 +403,7 @@ input[ type= "search"]::placeholder{
 /* this is for the collection price  */
 
 .collection-card-price{
-  font-size: 25px;
+  font-size: 1.3rem;
 }
 /* this is for the collection description  */
 .collection-card-description{
@@ -428,6 +428,9 @@ font-size: 20px;
   } 
 .card-theme-p, .card-theme-price{
   color: var(--text-theme);
+}
+.collection-card-title{
+  font-size: 1.5rem;
 }
 .text-color{
 color: var(--text-color);
@@ -581,7 +584,7 @@ color: var(--sub-text);
 /* -------------- about us section start -------------- */
 /* this is for the font size of all the sub heading on the main page  */
 .home-pg-sub-heading{
-  font-size: 40px;
+  font-size: 2.3rem;
   color: var(--text-theme);
 }
 /* this is for the inner heading of about us session on the home page  */
@@ -1446,7 +1449,7 @@ color: #fff;
 
   /* this is to increase the size of footer logo  */
 .main-footer-container .company-logo-icn{
-  width: 5rem;
+  width: 4rem;
   height: auto;
 }
 
@@ -1462,7 +1465,7 @@ color: #fff;
 
 /* this is for the sub heading of the footer  */
 .main-footer-container .sub-head{
-  font-size: 30px;
+  font-size: 1.5rem;
   color: #B78500;
 }
 
@@ -1516,10 +1519,7 @@ opacity: .5;
 .homepage-link:hover{
 opacity: 1;
 }
-.list-unstyled a {
-text-decoration: none;
-color: #fff;
-}
+
 
 .fab {
 color: #fff;
@@ -1544,8 +1544,9 @@ transform: scale(1.1);
 }
 
 .list-unstyled a {
-color: #ffffff;
-font-size: 15px;
+font-size: 13px;
+text-decoration: none;
+color: #fff;
 }
 
 .list-unstyled a:hover {
@@ -2585,7 +2586,7 @@ font-size: 22px;
   margin-right: 60px;
 }
 .control-icon{
-  font-size: 100%;
+  font-size: 1rem;
 }
 .over-view-heading{
 
@@ -2612,6 +2613,9 @@ width: fit-content;
 @media(max-width: 811px){
   .overview-section .overview-col .udated, .overview-text, .overview-icon{
     font-size: 13px;
+  }
+  .control-icon{
+    font-size: 0.6rem;
   }
 }
 @media(max-width: 344px){

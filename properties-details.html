@@ -88,10 +88,10 @@
     >
                      <!------------- slides start ------------------>
       
-                     <div class="carousel-inner">
+                     <div class="carousel-inner ">
                       <div class="carousel-item active"  >
                         <div class="carousel-overlay"></div> <!-- Add a new div for the overlay -->
-                        <img src="./PICS/property-detail-slider 2.jpg" class="d-block w-100 img-fluid" style="max-height: 93vh;" alt="...">
+                        <img id="carousel-img1" src="" class="d-block w-100 img-fluid " style="max-height: 75vh;" alt="...">
                         <div class="carousel-caption d-none d-md-block d-flex align-items-center justify-content-center">
                             
                         </div>
@@ -99,7 +99,7 @@
                       <div class="carousel-item " >
                         <div class="carousel-overlay"></div> <!-- Add a new div for the overlay -->
     
-                        <img src="./PICS/property-img-slider 3.jpg" class="d-block w-100 img-fluid" style="max-height: 93vh;" alt="...">
+                        <img id="carousel-img2" src="" class="d-block w-100 img-fluid " style="max-height: 75vh;" alt="...">
                         <div class="carousel-caption d-none d-md-block d-flex align-items-center justify-content-center">
         
         
@@ -107,7 +107,7 @@
                       </div>
                       <div class="carousel-item ">
                         <div class="carousel-overlay"></div> <!-- Add a new div for the overlay -->
-                        <img src="./PICS/property-detail-slider.jpg" class="d-block w-100 img-fluid" style="max-height: 93vh;" alt="...">
+                        <img id="carousel-img3" src="" class="d-block w-100 img-fluid" style="max-height: 75vh;" alt="...">
                         <div class="carousel-caption d-none d-md-block d-flex align-items-center justify-content-center">
         
         
@@ -115,7 +115,7 @@
                       </div>
                       <div class="carousel-item ">
                         <div class="carousel-overlay"></div> <!-- Add a new div for the overlay -->
-                        <img src="./PICS/property-img-slider-5.jpg" class="d-block w-100 img-fluid" style="max-height: 93vh;" alt="...">
+                        <img id="carousel-img4" src="" class="d-block w-100 img-fluid" style="max-height: 75vh;" alt="...">
                         <div class="carousel-caption d-none d-md-block d-flex align-items-center justify-content-center">
         
         
@@ -123,7 +123,7 @@
                       </div>
                       <div class="carousel-item ">
                         <div class="carousel-overlay"></div> <!-- Add a new div for the overlay -->
-                        <img src="./PICS/property-img-slider 4.jpg" class="d-block w-100 img-fluid" style="max-height: 93vh;" alt="...">
+                        <img id="carousel-img5" src="" class="d-block w-100 img-fluid" style="max-height: 75vh;" alt="...">
                         <div class="carousel-caption d-none d-md-block d-flex align-items-center justify-content-center">
         
         
@@ -134,7 +134,7 @@
 
       <!------------------ control section start  ----------------->
       <button
-        class="carousel-control-prev propty-crls-cntrl-btn propty-crls-cntrl-btn-prev"
+        class="carousel-control-prev propty-crls-cntrl-btn propty-crls-cntrl-btn-prev "
         type="button"
         data-bs-target="#carouselExampleCaptions"
         data-bs-slide="prev"
@@ -156,38 +156,47 @@
           <div class="container-fluid">
             <div class="row sub-gallery-container">
               <div class="column">
-                <img
-                  class="sub-gallery"
-                  src="./PICS/property-img-slider-5.jpg"
+                <img id="sub-img1"
+                  class="sub-gallery "
+                  src=""
                   style="width: 100%"
-                  onclick="currentSlide(2)"
+                  onclick="openSlide(1)"
                   alt="Cinque Terre"
                 />
               </div>
               <div class="column">
-                <img
+                <img id="sub-img2"
                   class="sub-gallery"
-                  src="./PICS/property-img-slider-5.jpg"
+                  src=""
                   style="width: 100%"
-                  onclick="currentSlide(2)"
+                  onclick="openSlide(2)"
                   alt="Cinque Terre"
                 />
               </div>
               <div class="column">
-                <img
+                <img id="sub-img3"
                   class="sub-gallery"
-                  src="./PICS/property-img-slider 3.jpg"
+                  src=""
                   style="width: 100%"
-                  onclick="currentSlide(3)"
+                  onclick="openSlide(3)"
                   alt="Mountains and fjords"
                 />
               </div>
               <div class="column">
-                <img
+                <img id="sub-img4"
                   class="sub-gallery"
-                  src="./PICS/property-img-slider 4.jpg"
+                  src=""
                   style="width: 100%"
-                  onclick="currentSlide(4)"
+                  onclick="openSlide(4)"
+                  alt="Northern Lights"
+                />
+              </div>
+              <div class="column">
+                <img id="sub-img5"
+                  class="sub-gallery"
+                  src=""
+                  style="width: 100%"
+                  onclick="openSlide(5)"
                   alt="Northern Lights"
                 />
               </div>
@@ -204,34 +213,34 @@
         <div class="row row-cols-3  mb-3">
           <div class="col overview-col mb-2">
             <div class="udated">Updated On:</div>
-            <div class="overview-text">November 5, 2022</div>
+            <div id="Updated-on" class="overview-text"></div>
           </div>
           <div class="col text-center overview-col mb-2">
             <div class="overview-icon"><i class="fa-solid fa-bed"></i></div>
-            <div class="overview-text">5 Bedrooms</div>
+            <div id="Bedrooms" class="overview-text"></div>
           </div>
           <div class="col text-center overview-col mb-2">
             <div class="overview-icon"><i class="fa-solid fa-bath"></i></div>
-            <div class="overview-text">3 Bathrooms</div>
+            <div id="Bathrooms" class="overview-text"></div>
           </div>
           <div class="col text-center overview-col mb-2">
             <div class="overview-icon">
               <i class="fa-solid fa-car-side"></i>
             </div>
-            <div class="overview-text">2 Garages</div>
+            <div id="Garages" class="overview-text"></div>
           </div>
           <div class="col text-center overview-col mb-2">
             <div class="overview-icon">
               <i class="fa-regular fa-square"></i>
             </div>
-            <div class="overview-text">190 ft2</div>
+            <div id="sqft" class="overview-text"></div>
           </div>
         
         <div class="mx-4 overview-col">
           <div class="overview-icon text-center">
             <i class="fa-solid fa-calendar"></i>
           </div>
-          <div class="overview-text">Year Built: 1992</div>
+          <div id="Year-Built" class="overview-text">Year Built: 1992</div>
         </div>
         <!-- <div class="row col-4">
         
@@ -271,15 +280,8 @@
           Description
         </div>
         <div class="row px-2 px-sm-4">
-          <div class="col">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate
-            dolorem sint maiores aliquam delectus commodi fugiat culpa
-            repudiandae, reiciendis modi facere perspiciatis officia quas quia
-            earum nesciunt. Quibusdam, corrupti repudiandae!
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate
-            dolorem sint maiores aliquam delectus commodi fugiat culpa
-            repudiandae, reiciendis modi facere perspiciatis officia quas quia
-            earum nesciunt. Quibusdam, corrupti repudiandae!
+          <div id="detail-description" class="col">
+
           </div>
         </div>
       </div>
@@ -292,24 +294,24 @@
         <div class="address-heading mb-1 mb-sm-3">Address</div>
         <div class="row row-cols-3 px-2 px-sm-3 px-md-5 mb-2 mb-sm-4 justify-content-between">
           <div class="col ">
-            <div class="address-section-text">Address: <span class="address-section-last-line">&nbsp; East Down Street</span></div>
+            <div class="address-section-text">Address: <span id="Address" class="address-section-last-line"></span></div>
           </div>
           <div class="col ">
-            <div class="address-section-text">City: <span class="address-section-last-line">&nbsp; Austin</span></div>
+            <div class="address-section-text">City: <span id="City" class="address-section-last-line"></span></div>
           </div>
           <div class="col ">
-            <div class="address-section-text">Area: <span class="address-section-last-line">&nbsp; Downtown</span></div>
+            <div class="address-section-text">Area: <span id="Area" class="address-section-last-line"></span></div>
           </div>
         </div>
         <div class="row row-cols-3 px-2 px-sm-3 px-md-5 justify-content-between">
           <div class="col ">
-            <div class="address-section-text ">Country: <span class="address-section-last-line">&nbsp; United State</span></div>
+            <div class="address-section-text ">Country: <span id="Country" class="address-section-last-line"></span></div>
           </div>
           <div class="col ">
-            <div class="address-section-text">State: <span class="address-section-last-line">&nbsp; Travis </span></div>
+            <div class="address-section-text">State: <span id="State" class="address-section-last-line"> </span></div>
           </div>
           <div class="col ">
-            <div class="address-section-text">Zip: <span class="address-section-last-line">&nbsp; 79021 </span></div>
+            <div class="address-section-text">Zip: <span id="Zip" class="address-section-last-line"></span></div>
           </div>
         </div>
       </div>
@@ -322,28 +324,28 @@
         <div class="address-heading mb-3">Details</div>
         <div class="row row-cols-3 px-2 px-sm-3  px-md-5 mb-4 justify-content-between">
           <div class="col ">
-            <div class="address-section-text mb-3">Property Id: <span class="address-section-last-line">&nbsp; 59</span></div>
-            <div class="address-section-text mb-3">Property Lot Size: <span class="address-section-last-line">&nbsp;  2,000 ft2</span></div>
-            <div class="address-section-text mb-3">Bathrooms: <span class="address-section-last-line">&nbsp;  6</span></div>
-            <div class="address-section-text mb-3">Garages: <span class="address-section-last-line">&nbsp; 2</span></div>
-            <div class="address-section-text mb-3">Basement: <span class="address-section-last-line">&nbsp;  cement</span></div>
-            <div class="address-section-text mb-3">Roofing: <span class="address-section-last-line">&nbsp;  No</span></div>
+            <div  class="address-section-text mb-3">Property Id: <span id="Property-Id" class="address-section-last-line"></span></div>
+            <div  class="address-section-text mb-3">Property Lot Size: <span id="Lot-Size" class="address-section-last-line"></span></div>
+            <div  class="address-section-text mb-3">Bathrooms: <span id="detail-bath" class="address-section-last-line"></span></div>
+            <div  class="address-section-text mb-3">Garages: <span id="detail-garage" class="address-section-last-line"></span></div>
+            <div class="address-section-text mb-3">Basement: <span id="basement" class="address-section-last-line"></span></div>
+            <div class="address-section-text mb-3">Roofing: <span id="roofing" class="address-section-last-line"></span></div>
           </div>
           <div class="col ">
-            <div class="address-section-text mb-3">Price: <span class="address-section-last-line">&nbsp; $ 770,000</span></div>
-            <div class="address-section-text mb-3">Rooms: <span class="address-section-last-line">&nbsp; 15</span></div>
-            <div class="address-section-text mb-3">Custom ID:: <span class="address-section-last-line">&nbsp; 156</span></div>
-            <div class="address-section-text mb-3">Garage Size: <span class="address-section-last-line">&nbsp;  2 cars</span></div>
-            <div class="address-section-text mb-3">External Construction: <span class="address-section-last-line">&nbsp; No</span></div>
-            <div class="address-section-text mb-3">Structure Type: <span class="address-section-last-line">&nbsp;  Wood</span></div>
+            <div class="address-section-text mb-3">Price: <span id="detail-price" class="address-section-last-line"></span></div>
+            <div class="address-section-text mb-3">Rooms: <span id="detail-room" class="address-section-last-line"></span></div>
+            <div class="address-section-text mb-3">Custom ID:: <span id="customer-id" class="address-section-last-line"></span></div>
+            <div class="address-section-text mb-3">Garage Size: <span id="garage-size" class="address-section-last-line"></span></div>
+            <div class="address-section-text mb-3">External Construction: <span id="externnal-construction" class="address-section-last-line">&nbsp; No</span></div>
+            <div class="address-section-text mb-3">Structure Type: <span id="structure-type" class="address-section-last-line"></span></div>
           </div>
           <div class="col ">
-            <div class="address-section-text mb-3">Property Size: <span class="address-section-last-line">&nbsp; 190 ft2</span></div>
-            <div class="address-section-text mb-3">Bedrooms: <span class="address-section-last-line">&nbsp;  5</span></div>
-            <div class="address-section-text mb-3">Year Built: <span class="address-section-last-line">&nbsp;  1982</span></div>
-            <div class="address-section-text mb-3">Available from: <span class="address-section-last-line">&nbsp;  2016-03-23</span></div>
-            <div class="address-section-text mb-3">Exterior Material: <span class="address-section-last-line">&nbsp; Wood</span></div>
-            <div class="address-section-text mb-3">Floors No: <span class="address-section-last-line">&nbsp; 2</span></div>
+            <div class="address-section-text mb-3">Property Size: <span id="property-size" class="address-section-last-line"></span></div>
+            <div class="address-section-text mb-3">Bedrooms: <span  id="detail-beds" class="address-section-last-line"></span></div>
+            <div  class="address-section-text mb-3">Year Built: <span id="detail-year-built" class="address-section-last-line"></span></div>
+            <div class="address-section-text mb-3">Available from: <span id="available-from" class="address-section-last-line"></span></div>
+            <div class="address-section-text mb-3">Exterior Material: <span id="exterior-material" class="address-section-last-line">/span></div>
+            <div  class="address-section-text mb-3">Floors No: <span id="floor-no" class="address-section-last-line"> </span></div>
           </div>
         </div>
 
@@ -365,16 +367,16 @@
               <div class="sub-feature-heading mb-3">Interior Details</div>
               <div class="row row-cols-3 mx-2 mx-sm-3 mx-md-5 ">
                 <div class="col mb-2">
-                  <div class="sub-feature-text">Equipped Kitchen</div>
+                  <div id="interior-deteail1" class="sub-feature-text"></div>
                 </div>
                 <div class="col mb-2">
-                  <div class="sub-feature-text">Gym</div>
+                  <div id="interior-deteail2" class="sub-feature-text"></div>
                 </div>
                 <div class="col mb-2">
-                  <div class="sub-feature-text">Laundry</div>
+                  <div id="interior-deteail3" class="sub-feature-text"></div>
                 </div>
                 <div class="col mb-2">
-                  <div class="sub-feature-text">Media Room</div>
+                  <div id="interior-deteail4" class="sub-feature-text"></div>
                 </div>
               </div>
             </div>
@@ -386,19 +388,19 @@
               <div class="sub-feature-heading mb-3">Outdoor Details</div>
               <div class="row row-cols-3 mx-2 mx-sm-3 mx-md-5 ">
                 <div class="col mb-2">
-                  <div class="sub-feature-text">Back yard</div>
+                  <div id="outdoor-deteail1" class="sub-feature-text"></div>
                 </div>
                 <div class="col mb-2">
-                  <div class="sub-feature-text">Basketball court</div>
+                  <div id="outdoor-deteail2" class="sub-feature-text"></div>
                 </div>
                 <div class="col mb-2">
-                  <div class="sub-feature-text">Garage Attached</div>
+                  <div id="outdoor-deteail3" class="sub-feature-text"></div>
                 </div>
                 <div class="col mb-2">
-                  <div class="sub-feature-text">Hot Bath</div>
+                  <div id="outdoor-deteail4" class="sub-feature-text"></div>
                 </div>
                 <div class="col mb-2">
-                  <div class="sub-feature-text">Pool</div>
+                  <div id="outdoor-deteail5" class="sub-feature-text"></div>
                 </div>
               </div>
             </div>
@@ -410,22 +412,22 @@
               <div class="sub-feature-heading mb-3">Utilities</div>
               <div class="row row-cols-3 mx-2 mx-sm-3 mx-md-5 ">
                 <div class="col mb-2">
-                  <div class="sub-feature-text">Central Air</div>
+                  <div id="utilities-deteail1" class="sub-feature-text"></div>
                 </div>
                 <div class="col mb-2">
-                  <div class="sub-feature-text">Electricity</div>
+                  <div id="utilities-deteail2" class="sub-feature-text"></div>
                 </div>
                 <div class="col mb-2">
-                  <div class="sub-feature-text">Heating</div>
+                  <div id="utilities-deteail3" class="sub-feature-text"></div>
                 </div>
                 <div class="col mb-2">
-                  <div class="sub-feature-text">Natural Gas</div>
+                  <div id="utilities-deteail4" class="sub-feature-text"></div>
                 </div>
                 <div class="col mb-2">
-                  <div class="sub-feature-text">Ventilation</div>
+                  <div id="utilities-deteail5" class="sub-feature-text"></div>
                 </div>
                 <div class="col mb-2">
-                  <div class="sub-feature-text">Water</div>
+                  <div id="utilities-deteail6" class="sub-feature-text"></div>
                 </div>
               </div>
             </div>
@@ -437,22 +439,22 @@
               <div class="sub-feature-heading mb-3">Other Features</div>
               <div class="row row-cols-3 mx-2 mx-sm-3 mx-md-5">
                 <div class="col mb-2">
-                  <div class="sub-feature-text">Chair Accessible</div>
+                  <div id="other-deteail1" class="sub-feature-text"></div>
                 </div>
                 <div class="col mb-2">
-                  <div class="sub-feature-text">Elevator</div>
+                  <div id="other-deteail2" class="sub-feature-text"></div>
                 </div>
                 <div class="col mb-2">
-                  <div class="sub-feature-text">Fireplace</div>
+                  <div  id="other-deteail3" class="sub-feature-text"></div>
                 </div>
                 <div class="col mb-2">
-                  <div class="sub-feature-text">Smoke detectors</div>
+                  <div id="other-deteail4" class="sub-feature-text"></div>
                 </div>
                 <div class="col mb-2">
-                  <div class="sub-feature-text">Washer and dryer</div>
+                  <div id="other-deteail5" class="sub-feature-text"></div>
                 </div>
                 <div class="col mb-2">
-                  <div class="sub-feature-text">WiFi</div>
+                  <div id="other-deteail6" class="sub-feature-text"></div>
                 </div>
               </div>
             </div>
@@ -731,19 +733,31 @@
     <!-- custom javacript  -->
     <script src="javascript.js"></script>
     <script>
-// this is for the graph price of properties 
-const xArray = ["1995", "1996", "1997", "1998", "1999","2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"];
-const yArray = [5, 9, 4, 4, 5, 7, 8, 11, 18, 17, 25, 29, 34, 44, 65, 57, 68, 76, 81, 80, 85, 89, 94, 84, 95, 107, 118, 116, 128];
+// Open slide in main carousel based on sub-gallery click
+function openSlide(slideIndex) {
+  showSlides(slideIndex);
+}
 
-const data = [{
-  x:xArray,
-  y:yArray,
-  type:"bar"
-}];
+// Show slides in main carousel
+function showSlides(n) {
+  let slides = document.getElementsByClassName("carousel-item");
+  let dots = document.getElementsByClassName("sub-gallery");
+  if (n < 1) {
+    n = slides.length;
+  } else if (n > slides.length) {
+    n = 1;
+  }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+  slides[n - 1].style.display = "block";
+  dots[n - 1].classList.add("active");
+}
 
 
-
-Plotly.newPlot("myPlot", data);
     </script>
   </body>
 </html>

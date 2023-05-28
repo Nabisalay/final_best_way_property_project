@@ -25,36 +25,66 @@
     
             <!-- custom.css -->
 
-            <link rel="stylesheet" href="styles.css">
+            <link rel="stylesheet" href="adminstyles.css">
 
   </head>
   <body>
     <div class="wrapper">
       <div class="main-container">
-       <div class="right-side px-4 py-5">
+       <div class="right-side px-2 py-3 py-lg-5 px-lg-4">
         <h2 class="notification-heading">Notifications:</h2>
-        <ul class="notification-list px-5  pt-5">
+        <ul class="notification-list px-lg-5 px-1 px-sm-3 pt-3  pt-lg-5">
           
-          <li class="notification-items px-2 py-2" onclick="clientreview()">Client Review</li>
-          <li class="notification-items px-2 py-2" onclick="contactform()">Contact Form</li>
-          <li class="notification-items px-2 py-2" onclick="Scheduleform()">Schedule Form</li>
-          <li class="notification-items px-2 py-2" onclick="newsletter()">News Letter</li>
-          <li class="notification-items px-2 py-2" onclick="addlistinginfo()">Listing Form</li>
-          <li class="notification-items px-2 py-2" onclick="viewlistinginfo()">See Listing</li>
-          <li class="notification-items px-2 py-2" onclick="addlistinginfo()">Add Listing</li>
+          <li class="notification-items px-1 px-sm-2 py-1 px-lg-2 py-lg-2" onclick="clientreview()">Client Review</li>
+          <li class="notification-items px-1 px-sm-2 py-2" onclick="contactform()">Contact Form</li>
+          <li class="notification-items px-1 px-sm-2 py-2" onclick="Scheduleform()">Schedule Form</li>
+          <li class="notification-items px-1 px-sm-2 py-2" onclick="newsletter()">News Letter</li>
+          <li class="notification-items px-1 px-sm-2 py-2" onclick="addlistinginfomsg()">Listing Form</li>
+          <li class="notification-items px-1 px-sm-2 py-2" onclick="viewlistinginfo()">See Listing</li>
+          <li class="notification-items px-1 px-sm-2 py-2" onclick="addlistinginfo()">Add Listing</li>
         </ul>
         <div class="log-out p-2" onclick="logout()">log out</div>
 
       </div>
 
-      <div class="left-side px-3 py-5">
+      <div class="left-side px-1 px-sm-3 py-sm-5 py-4">
         <h2 class="dashbord ">Dashboard:</h2>
-        <div id="left-side-container" class=" mt-5">
+        <div id="left-side-container" class=" mt-4 mt-lg-5">
+
+        <!--
+                    <div class="further-details">
+          <div class="image-heading-container">
+            <h4>Add property images</h4>
+          </div>
+
+        </div> 
+          <div class="images-container">
+          <div class="form-group row contact-row">
+            <div class="col-md-6 mb-1 mb-sm-3 ">
+              <label id="phone-label" class="mb-1" for="">Enter Seller Image*</label>
+              <input class="add-listing-input " id="listing-phone" type="file" class="form-control "  >
+            </div>
+            <div class="col-md-6 mb-3">
+                <label id="loction-label" class="mb-1" for="property-location" class="form-label">Enter property Image*</label>
+                <input class="add-listing-input " id="listing-location" type="file" class="form-control"  >
+            </div>
+            </div>
+          <div class="form-group row contact-row">
+            <div class="col-md-6 mb-1 mb-sm-3 ">
+              <label id="phone-label" class="mb-1" for="">Enter Seller Image*</label>
+              <input class="add-listing-input " id="listing-phone" type="file" class="form-control "  >
+            </div>
+            <div class="col-md-6 mb-3">
+                <label id="loction-label" class="mb-1" for="property-location" class="form-label">Enter property Image*</label>
+                <input class="add-listing-input " id="listing-location" type="file" class="form-control"  >
+            </div>
+            </div>
+          </div> -->
           <!-- <div class="add-listing-container d-flex justify-content-around">
           <div class="trending-property p-2" onclick="viewlisting(event)">Add property to trending list</div>
           <div class="property-listing p-2" onclick="viewlisting(event)">Add property to Listing</div>
           </div> -->
-           <div class="add-listing-input-field ">
+           <!-- <div class="add-listing-input-field ">
             <form class="listing-form-container"  >
               <div class="form-group  row contact-row">
                 <div class="col-sm-6 mb-1 mb-sm-3 ">
@@ -111,7 +141,7 @@
             <button class="submit-btn p-2" >Add Further details</button>
         </div>
               </form>
-          </div> 
+          </div>  -->
         </div>
 
       </div>

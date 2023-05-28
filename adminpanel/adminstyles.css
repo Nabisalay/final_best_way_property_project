@@ -57,7 +57,7 @@
     width: 70%;
     background-color: rgba(255, 255, 255, 0.3);
 
-    overflow: scroll;
+
     /* display: flex; */
     /* flex-direction: column; */
     /* justify-content: space-around; */
@@ -90,10 +90,9 @@
   }
 
   
-  .fa-solid{
-    position: relative;
-    left: 85%;
-    bottom: 50%;
+  .login-icon{
+    position: absolute;
+    left: 88%;
     font-size: 1.8rem;
     color: rgba(255, 255, 255, 0.8);
     opacity: 0.8;
@@ -205,7 +204,7 @@ tr:nth-child(even) {
   border: 1px solid  #fff;
   outline: none;
   border-radius: 3rem;
-  /* font-size: 1.2rem; */
+  font-size: 1.2rem;
   padding-inline-start: 20px;
   /* padding-inline-end: 70px; */
 }
@@ -235,4 +234,171 @@ tr:nth-child(even) {
 .submit-btn:hover{
   background-color:  rgba(0, 0, 0, 0.2);
 
+}
+@media(max-width: 850px){
+  .listing-btn{
+    font-size: 0.8rem;
+  }
+}
+@media(max-width: 700px){
+  .listing-btn{
+    font-size: 0.6rem;
+  }
+}
+@media(max-width: 660px){
+  textarea::placeholder{
+    font-size: 0.7rem;
+  }
+  .submit-btn{
+    font-size: 0.8rem;
+  }
+  .notification-heading{
+    font-size: 1.5rem;
+  }
+  .dashbord{
+    font-size: 1.5rem;
+  }
+  .log-out{
+    font-size: 1rem;
+  }
+  .notification-items{
+    font-size: 0.8rem;
+  }
+  td, th {
+    font-size: 8px;
+  }
+  .add-listing-input{
+    font-size: 1rem;
+    
+  }
+
+}
+@media(max-width: 559px){
+  label{
+    font-size: 0.8rem;
+  }
+  .submit-btn{
+    font-size: 0.7rem;
+  }
+  .listing-btn{
+    font-size: 0.5rem;
+  }
+  .notification-heading{
+    font-size: 1.2rem;
+  }
+  .dashbord{
+    font-size: 1.3rem;
+  }
+  .notification-items{
+    font-size: 0.6rem;
+  }
+
+  .add-listing-input{
+    font-size: 0.7rem;
+    
+  }
+}
+@media(max-width: 481px){
+  .notification-heading{
+    font-size: 1.2rem;
+  }
+  label{
+    font-size: 0.7rem;
+  }
+  .submit-btn{
+    font-size: 0.6rem;
+  }
+  .log-out{
+    font-size: 0.8rem;
+  }
+  .dashbord{
+    font-size: 1.2rem;
+  }
+  .notification-items{
+    font-size: 0.6rem;
+  }
+
+  .add-listing-input{
+    font-size: 0.7rem;
+    
+  }
+
+}
+@media(max-width: 479px){
+  .notification-heading{
+    font-size: 1rem;
+  }
+
+  .notification-items{
+    font-size: 0.5rem;
+  }
+
+  .add-listing-input{
+    font-size: 0.6rem;
+    
+  }
+
+}
+@media(max-width: 400px){
+  .notification-heading{
+    font-size: 0.8rem;
+  }
+  label{
+    font-size: 0.6rem;
+  }
+  .notification-items{
+    font-size: 0.5rem;
+  }
+
+  .add-listing-input{
+    font-size: 0.6rem;
+    
+  }
+
+} 
+
+
+.login-label{
+  font-size: 1.3rem;
+}
+@media(max-width: 900px){
+  .login-label{
+    font-size: 1rem;
+  }
+  .input-field{
+    font-size: 1rem;
+    width: 80%;
+    height: auto;
+  }
+  .btn{
+    font-size: 1.1rem;
+  }
+  .login-icon{
+    font-size: 1.4rem;
+    left: 75%;
+  }
+}
+@media(max-width: 529px){
+  .login-label{
+    font-size: 0.8rem;
+  }
+  .login-container{
+    width: 85%;
+  }
+  .input-field{
+    font-size: 0.8rem;
+    width: 80%;
+    height: auto;
+    padding: 1rem;
+    border-radius: 3rem;
+    padding-inline-start: 25px;
+    padding-inline-end: 10px;
+  }
+  .btn{
+    font-size: 0.9rem;
+  }
+  .login-icon{
+    font-size: 1rem;
+    left: 75%;
+  }
 }

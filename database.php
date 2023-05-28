@@ -201,11 +201,19 @@ if (isset($_POST['listingdata'])) {
     // Prepare the INSERT statement based on the table name
     if ($tableName === "properties_collection_basic") {
     // Shift existing data to subsequent rows
-    $conn->query("UPDATE properties_collection_basic SET id = id   + 1 ORDER BY id   DESC");
+// Shift existing data to subsequent rows
+$conn->query("UPDATE properties_collection_basic SET id = id + 1, all_properties_id = all_properties_id + 1 ORDER BY id DESC");
+
+    // // Fetch the maximum value of the all_properties_id column
+    // $result = $conn->query("SELECT MAX(all_properties_id) AS max_all_properties_id FROM properties_collection_basic");
+    // $row = $result->fetch_assoc();
+    // $maxAllPropertiesId = $row['max_all_properties_id'];
+    // $newAllPropertiesId = $maxAllPropertiesId + 1;
 
   // Prepare and bind the statement to prevent SQL injection
-  $stmt1 = $conn->prepare("INSERT INTO properties_collection_basic (id, name, price, status, seller_name, beds, baths, sqft, seller_img, image, small_description)
-   VALUES (1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE name = VALUES(name), price = VALUES(price), status = VALUES(status), seller_name = VALUES(seller_name), beds = VALUES(beds), baths = VALUES(baths), sqft = VALUES(sqft), seller_img = VALUES(seller_img), image = VALUES(image), small_description = VALUES(small_description)");
+  $stmt1 = $conn->prepare("INSERT INTO properties_collection_basic (id, all_properties_id, name, price, status, seller_name, beds, baths, sqft, seller_img, image, small_description)
+
+   VALUES (1, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE all_properties_id = VALUES(all_properties_id), name = VALUES(name), price = VALUES(price), status = VALUES(status), seller_name = VALUES(seller_name), beds = VALUES(beds), baths = VALUES(baths), sqft = VALUES(sqft), seller_img = VALUES(seller_img), image = VALUES(image), small_description = VALUES(small_description)");
 
   $stmt1->bind_param("ssssssssss", $property_title, $property_price, $property_status, $property_seller_name, $property_beds, $property_baths, $property_sqft, $property_seller_img, $property_img, $property_description);
 
@@ -344,6 +352,156 @@ if ($result_all_properties->num_rows > 0) {
     $all_properties_collection[] = $row;
   }
 }
+//  this is to select more image of properties
+$sql_property_images = "SELECT * FROM property_images";
+$result_property_images = $conn->query($sql_property_images);
+
+// Create an array to hold the properties data
+$all_sql_property_images = array();
+
+// Check if the query returned any results
+if ($result_property_images->num_rows > 0) {
+  // Loop through the results and add each property to the array
+  while($row = $result_property_images->fetch_assoc()) {
+    $all_sql_property_images[] = $row;
+  }
+}
+
+//  this is to select  location of properties
+$sql_property_location = "SELECT * FROM property_location";
+$result_property_location = $conn->query($sql_property_location);
+
+// Create an array to hold the properties data
+$all_sql_property_location = array();
+
+// Check if the query returned any results
+if ($result_property_location->num_rows > 0) {
+  // Loop through the results and add each property to the array
+  while($row = $result_property_location->fetch_assoc()) {
+    $all_sql_property_location[] = $row;
+  }
+}
+
+//  this is to select description of properties
+$sql_property_detail_description = "SELECT * FROM property_detail_description";
+$result_property_detail_description = $conn->query($sql_property_detail_description);
+
+// Create an array to hold the properties data
+$all_sql_detail_description = array();
+
+// Check if the query returned any results
+if ($result_property_detail_description->num_rows > 0) {
+  // Loop through the results and add each property to the array
+  while($row = $result_property_detail_description->fetch_assoc()) {
+    $all_sql_detail_description[] = $row;
+  }
+}
+
+//  this is to select details of properties
+$sql_property_details = "SELECT * FROM property_details";
+$result_property_details = $conn->query($sql_property_details);
+
+// Create an array to hold the properties data
+$all_sql_property_details = array();
+
+// Check if the query returned any results
+if ($result_property_details->num_rows > 0) {
+  // Loop through the results and add each property to the array
+  while($row = $result_property_details->fetch_assoc()) {
+    $all_sql_property_details[] = $row;
+  }
+}
+
+//  this is to select iinterior details of properties
+$sql_interior_details = "SELECT * FROM interior_details";
+$result_interior_details = $conn->query($sql_interior_details);
+
+// Create an array to hold the properties data
+$all_sql_interior_details = array();
+
+// Check if the query returned any results
+if ($result_interior_details->num_rows > 0) {
+  // Loop through the results and add each property to the array
+  while($row = $result_interior_details->fetch_assoc()) {
+    $all_sql_interior_details[] = $row;
+  }
+}
+
+//  this is to select outdoor details of properties
+$sql_outdoor_details = "SELECT * FROM outdoor_details";
+$result_outdoor_details = $conn->query($sql_outdoor_details);
+
+// Create an array to hold the properties data
+$all_sql_outdoor_details = array();
+
+// Check if the query returned any results
+if ($result_outdoor_details->num_rows > 0) {
+  // Loop through the results and add each property to the array
+  while($row = $result_outdoor_details->fetch_assoc()) {
+    $all_sql_outdoor_details[] = $row;
+  }
+}
+
+//  this is to select utilities details of properties
+$sql_property_utilities = "SELECT * FROM property_utilities";
+$result_property_utilities = $conn->query($sql_property_utilities);
+
+// Create an array to hold the properties data
+$all_sql_property_utilities = array();
+
+// Check if the query returned any results
+if ($result_property_utilities->num_rows > 0) {
+  // Loop through the results and add each property to the array
+  while($row = $result_property_utilities->fetch_assoc()) {
+    $all_sql_property_utilities[] = $row;
+  }
+}
+
+//  this is to select other features of properties
+$sql_properties_other_features = "SELECT * FROM properties_other_features";
+$result_properties_other_features = $conn->query($sql_properties_other_features);
+
+// Create an array to hold the properties data
+$all_sql_properties_other_features = array();
+
+// Check if the query returned any results
+if ($result_properties_other_features->num_rows > 0) {
+  // Loop through the results and add each property to the array
+  while($row = $result_properties_other_features->fetch_assoc()) {
+    $all_sql_properties_other_features[] = $row;
+  }
+}
+
+//  this is to select past year property price of properties
+$sql_property_past_prices = "SELECT * FROM property_past_prices";
+$result_property_past_prices = $conn->query($sql_property_past_prices);
+
+// Create an array to hold the properties data
+$all_sql_property_past_prices = array();
+
+// Check if the query returned any results
+if ($result_property_past_prices->num_rows > 0) {
+  // Loop through the results and add each property to the array
+  while($row = $result_property_past_prices->fetch_assoc()) {
+    $all_sql_property_past_prices[] = $row;
+  }
+}
+
+//  this is to select property_overview of properties
+$sql_property_overview = "SELECT * FROM property_overview";
+$result_property_overview = $conn->query($sql_property_overview);
+
+// Create an array to hold the properties data
+$all_sql_property_overview = array();
+
+// Check if the query returned any results
+if ($result_property_overview->num_rows > 0) {
+  // Loop through the results and add each property to the array
+  while($row = $result_property_overview->fetch_assoc()) {
+    $all_sql_property_overview[] = $row;
+  }
+}
+
 
 // Set the content type header to application/json
 header('Content-Type: application/json');
@@ -351,7 +509,17 @@ header('Content-Type: application/json');
 $data = array(
   'properties' => $properties,
   'client_reviews' => $client_review_data,
-  'all_properties_data' => $all_properties_collection
+  'all_properties_data' => $all_properties_collection,
+  'all_sql_property_images' => $all_sql_property_images,
+  'all_sql_property_location' => $all_sql_property_location,
+  'all_sql_detail_description' => $all_sql_detail_description,
+  'all_sql_property_details' => $all_sql_property_details,
+  'all_sql_interior_details' => $all_sql_interior_details,
+  'all_sql_outdoor_details' => $all_sql_outdoor_details,
+  'all_sql_property_utilities' => $all_sql_property_utilities,
+  'all_sql_properties_other_features' => $all_sql_properties_other_features,
+  'all_sql_property_past_prices' => $all_sql_property_past_prices,
+  'all_sql_property_overview' => $all_sql_property_overview
 );
 echo json_encode($data);
 

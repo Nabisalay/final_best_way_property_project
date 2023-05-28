@@ -18,6 +18,10 @@ const tranding_properties = document.getElementById("tranding-properties");
 
 const cardCol = document.createElement("div");
 cardCol.className = "col card-p";
+cardCol.addEventListener('click', function() {
+  // Navigate to the description page with the product's ID in the URL
+  window.location.href = `properties-details.html?data=${encodeURIComponent(JSON.stringify(property.all_properties_id))}`;
+});
 
 const card = document.createElement("div");
 card.className = "card h-100";
@@ -26,7 +30,8 @@ const cardBodyPosition = document.createElement("div");
 cardBodyPosition.className = "position-relative card-body-p";
 
 const cardImageLink = document.createElement("a");
-cardImageLink.href = "";
+cardImageLink.href = `properties-details.html?data=${encodeURIComponent(JSON.stringify(property.all_properties_id))}`;
+
 
 const cardImage = document.createElement("img");
 cardImage.src = property.image;
@@ -50,7 +55,7 @@ const cardBody = document.createElement("div");
 cardBody.className = "card-body";
 
 const cardTitleLink = document.createElement("a");
-cardTitleLink.href = "";
+cardTitleLink.href = `properties-details.html?data=${encodeURIComponent(JSON.stringify(property.all_properties_id))}`;
 cardTitleLink.innerHTML = `<h4 class="card-title collection-card-title card-theme-p mt-1">${property.name}</h4>`;
 
 const cardSubtitle = document.createElement("h6");
@@ -180,6 +185,7 @@ $(document).ready(function (){
     
 const cardCol = document.createElement("div");
 cardCol.className = "col card-p";
+// this status class has been added for filter purpose on the all collection page
 
 if(property.status === 'Sale'){
   cardCol.className = 'col card-p Sale'
@@ -190,6 +196,10 @@ if(property.status === 'Sale'){
 }else if(property.status === 'Apartment'){
   cardCol.className = 'col card-p Apartment'
 }
+cardCol.addEventListener('click', function() {
+  // Navigate to the description page with the product's ID in the URL
+  window.location.href = `properties-details.html?data=${encodeURIComponent(JSON.stringify(property.all_properties_id))}`;
+});
 
 const card = document.createElement("div");
 card.className = "card h-100";
@@ -198,7 +208,7 @@ const cardBodyPosition = document.createElement("div");
 cardBodyPosition.className = "position-relative card-body-p";
 
 const cardImageLink = document.createElement("a");
-cardImageLink.href = "";
+cardImageLink.href = `properties-details.html?data=${encodeURIComponent(JSON.stringify(property.all_properties_id))}`;
 
 const cardImage = document.createElement("img");
 cardImage.src = property.image;
@@ -222,7 +232,7 @@ const cardBody = document.createElement("div");
 cardBody.className = "card-body";
 
 const cardTitleLink = document.createElement("a");
-cardTitleLink.href = "properties-details.html";
+cardTitleLink.href = `properties-details.html?data=${encodeURIComponent(JSON.stringify(property.all_properties_id))}`;
 cardTitleLink.innerHTML = `<h4 class="card-title collection-card-title card-theme-p mt-1">${property.name}</h4>`;
 
 const cardSubtitle = document.createElement("h6");
@@ -328,6 +338,12 @@ if(property.status === 'Sale'){
   cardCol.className = 'col card-p Apartment'
 }
 
+cardCol.addEventListener('click', function() {
+  // Navigate to the description page with the product's ID in the URL
+  window.location.href = `properties-details.html?data=${encodeURIComponent(JSON.stringify(property.all_properties_id))}`;
+});
+
+
 const card = document.createElement("div");
 card.className = "card h-100";
 
@@ -335,7 +351,7 @@ const cardBodyPosition = document.createElement("div");
 cardBodyPosition.className = "position-relative card-body-p";
 
 const cardImageLink = document.createElement("a");
-cardImageLink.href = "";
+cardImageLink.href = `properties-details.html?data=${encodeURIComponent(JSON.stringify(property.all_properties_id))}`;
 
 const cardImage = document.createElement("img");
 cardImage.src = property.image;
@@ -359,7 +375,7 @@ const cardBody = document.createElement("div");
 cardBody.className = "card-body";
 
 const cardTitleLink = document.createElement("a");
-cardTitleLink.href = "properties-details.html";
+cardTitleLink.href = `properties-details.html?data=${encodeURIComponent(JSON.stringify(property.all_properties_id))}`;
 cardTitleLink.innerHTML = `<h4 class="card-title collection-card-title card-theme-p mt-1">${property.name}</h4>`;
 
 const cardSubtitle = document.createElement("h6");
@@ -1036,6 +1052,10 @@ function searchcontrol(event){
         matchCount++;
   const cardCol = document.createElement("div");
 cardCol.className = "col card-p";
+cardCol.addEventListener('click', function() {
+  // Navigate to the description page with the product's ID in the URL
+  window.location.href = `properties-details.html?data=${encodeURIComponent(JSON.stringify(property.all_properties_id))}`;
+});
 
 const card = document.createElement("div");
 card.className = "card h-100";
@@ -1044,7 +1064,7 @@ const cardBodyPosition = document.createElement("div");
 cardBodyPosition.className = "position-relative card-body-p";
 
 const cardImageLink = document.createElement("a");
-cardImageLink.href = "";
+cardImageLink.href = `properties-details.html?data=${encodeURIComponent(JSON.stringify(property.all_properties_id))}`;
 
 const cardImage = document.createElement("img");
 cardImage.src = property.image;
@@ -1068,7 +1088,7 @@ const cardBody = document.createElement("div");
 cardBody.className = "card-body";
 
 const cardTitleLink = document.createElement("a");
-cardTitleLink.href = "properties-details.html";
+cardTitleLink.href = `properties-details.html?data=${encodeURIComponent(JSON.stringify(property.all_properties_id))}`;
 cardTitleLink.innerHTML = `<h4 class="card-title collection-card-title card-theme-p mt-1">${property.name}</h4>`;
 
 const cardSubtitle = document.createElement("h6");

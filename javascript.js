@@ -938,3 +938,275 @@ function allcollection() {
 // $(window).on("load",function(){
 //   $("#laoding-container").fadeOut("slow");
 // });
+
+
+
+
+$(document).ready(function (){
+  const urlParams = new URLSearchParams(window.location.search);
+const primarykey = urlParams.get('data');
+
+const primary_no = JSON.parse((primarykey));
+
+  const main_data_base = fetch('database.php')
+.then(response => response.json())
+.then(data => { 
+// this is for images 
+  const all_images = data.all_sql_property_images;
+
+  // this is for overview section 
+  const property_overview = data.all_sql_property_overview;
+
+  // this is for overview section 
+  const detail_description = data.all_sql_detail_description;
+
+  // this is for overview section 
+  const property_location = data.all_sql_property_location;
+
+  // this is for overview section 
+  const property_details = data.all_sql_property_details;
+
+  // this is for overview section 
+  const interior_details = data.all_sql_interior_details;
+
+  // this is for overview section 
+  const outdoor_details = data.all_sql_outdoor_details;
+  // this is for overview section 
+  const property_utilities = data.all_sql_property_utilities;
+  // this is for overview section 
+  const properties_other_features = data.all_sql_properties_other_features;
+  // this is for overview section 
+  const property_past_prices = data.all_sql_property_past_prices;
+
+
+ const carousel_img1 = document.getElementById('carousel-img1')
+ const carousel_img2 = document.getElementById('carousel-img2')
+ const carousel_img3 = document.getElementById('carousel-img3')
+ const carousel_img4 = document.getElementById('carousel-img4')
+ const carousel_img5 = document.getElementById('carousel-img5')
+
+const img1 = document.getElementById('sub-img1');
+const img2 = document.getElementById('sub-img2');
+const img3 = document.getElementById('sub-img3');
+const img4 = document.getElementById('sub-img4');
+const img5 = document.getElementById('sub-img5');
+
+if(primary_no){
+
+for(let i = 0; i < all_images.length; i++){
+  if (primary_no == all_images[i].all_properties_id){
+    
+    const images = all_images[i];
+// this is for sub gallery images
+    img1.src = images.image1_url
+    img2.src = images.image2_url
+    img3.src = images.image3_url
+    img4.src = images.image4_url
+    img5.src = images.image1_url
+
+    // this is for carousel images
+    carousel_img1.src = images.image1_url
+    carousel_img2.src = images.image2_url
+    carousel_img3.src = images.image3_url
+    carousel_img4.src = images.image4_url
+    carousel_img5.src = images.image1_url
+
+  }
+  else {
+    console.log('error')
+  }
+}
+
+
+
+const updated_on = document.querySelector('#Updated-on');
+const Bedrooms = document.querySelector('#Bedrooms')
+const Bathrooms = document.querySelector('#Bathrooms');
+const Garages = document.querySelector('#Garages')
+const sqft = document.querySelector('#sqft')
+
+for(let i = 0 ; i < property_overview.length ; i++){
+  const overview = property_overview[i];
+  if(primary_no === overview.all_properties_id){
+    updated_on.innerHTML = 	overview.Updated_on;
+    Bedrooms.innerHTML = 	`${overview.Bedrooms} Bedrooms`;
+    Bathrooms.innerHTML = 	`${overview.Bathrooms} Bedrooms`;
+    Garages.innerHTML = 	`${overview.Garages} Bedrooms`;
+    sqft.innerHTML = 	overview.sqft;
+  }
+
+}
+
+const property_detail_description = document.querySelector('#detail-description')
+
+for(let i = 0 ; i < detail_description.length ; i++){
+
+  const description = detail_description[i];
+  if(primary_no === description.all_properties_id){
+    property_detail_description.innerHTML = description.detail_description;
+  }
+
+}
+
+const address = document.querySelector('#Address');
+const City = document.querySelector('#City');
+const Area = document.querySelector('#Area');
+const Country = document.querySelector('#Country');
+const State = document.querySelector('#State');
+const Zip = document.querySelector('#Zip');
+
+for(let i = 0 ; i < property_location.length ; i++){
+  let location = property_location[i];
+  if (primary_no === location.all_properties_id){
+    address.innerHTML = '\u00A0' + location.address;
+    City.innerHTML = '\u00A0' + location.city;
+    Area.innerHTML = '\u00A0' + location.area;
+    Country.innerHTML = '\u00A0' + location.country;
+    State.innerHTML = '\u00A0' + location.state;
+    Zip.innerHTML = '\u00A0' + location.zip;
+  }
+}
+
+const Property_Id = document.querySelector('#Property-Id');
+const Lot_Size = document.querySelector('#Lot-Size');
+const detail_bath = document.querySelector('#detail-bath');
+const detail_garage = document.querySelector('#detail-garage');
+const basement = document.querySelector('#basement');
+const roofing = document.querySelector('#roofing');
+
+const detail_price = document.querySelector('#detail-price');
+const detail_room = document.querySelector('#detail-room');
+const customer_id = document.querySelector('#customer-id');
+const garage_size = document.querySelector('#garage-size');
+const externnal_construction = document.querySelector('#externnal-construction');
+const structure_type = document.querySelector('#structure-type');
+
+const property_size = document.querySelector('#property-size');
+const detail_beds = document.querySelector('#detail-beds');
+const detail_year_built = document.querySelector('#detail-year-built');
+const available_from = document.querySelector('#available-from');
+const exterior_material = document.querySelector('#exterior-material');
+const floor_no = document.querySelector('#floor-no');
+
+for(let i = 0 ; i < property_details.length ; i++){
+  let details = property_details[i];
+  if(primary_no === details.all_properties_id){
+    Property_Id.innerText = details.Property_Id;
+    Lot_Size.innerHTML = details.Property_Lot_Size;
+    detail_bath.innerHTML = details.Bathrooms;
+    detail_garage.innerHTML = details.Garages;
+    basement.innerHTML = details.Basement;
+    roofing.innerHTML = details.Roofing;
+    detail_price.innerHTML = details.Price;
+    detail_room.innerHTML = details.Rooms;
+    customer_id.innerHTML = details.Custom_ID;
+    garage_size.innerHTML = details.Garage_Size;
+    externnal_construction.innerHTML = details.External_Construction;
+    structure_type.innerHTML = details.Structure_Type;
+    property_size.innerHTML = details.Property_Size;
+    detail_beds.innerHTML = details.Bedrooms;
+    detail_year_built.innerHTML = details.Year_Built;
+    available_from.innerHTML = details.Available_from;
+    exterior_material.innerHTML = details.Exterior_Material;
+    floor_no.innerHTML = details.Floors_No;
+  }
+}
+
+const interior_detail1 = document.querySelector('#interior-deteail1') 
+const interior_detail2 = document.querySelector('#interior-deteail2')
+const interior_detail3 = document.querySelector('#interior-deteail3')
+const interior_detail4 = document.querySelector('#interior-deteail4')
+
+for(let i = 0 ; i <interior_details.length; i++){
+  const interior_detail = interior_details[i];
+  if(primary_no === interior_detail.all_properties_id){
+  interior_detail1.innerHTML =  interior_detail.Interior_Details1;
+  interior_detail2.innerHTML =  interior_detail.Interior_Details2;
+  interior_detail3.innerHTML =  interior_detail.Interior_Details3;
+  interior_detail4.innerHTML =  interior_detail.Interior_Details4;
+}
+}
+
+const outdoor_detail1 = document.querySelector('#outdoor-deteail1') 
+const outdoor_detail2 = document.querySelector('#outdoor-deteail2')
+const outdoor_detail3 = document.querySelector('#outdoor-deteail3')
+const outdoor_detail4 = document.querySelector('#outdoor-deteail4')
+const outdoor_detail5 = document.querySelector('#outdoor-deteail5')
+
+for(let i = 0 ; i <outdoor_details.length; i++){
+  const outdoor_detail = outdoor_details[i];
+  if(primary_no === outdoor_detail.all_properties_id){
+    outdoor_detail1.innerHTML =  outdoor_detail.Outdoor_Details1;
+    outdoor_detail2.innerHTML =  outdoor_detail.Outdoor_Details2;
+    outdoor_detail3.innerHTML =  outdoor_detail.Outdoor_Details3;
+    outdoor_detail4.innerHTML =  outdoor_detail.Outdoor_Details4;
+    outdoor_detail5.innerHTML =  outdoor_detail.Outdoor_Details5;
+}
+}
+
+const utilities_detail1 = document.querySelector('#utilities-deteail1') 
+const utilities_detail2 = document.querySelector('#utilities-deteail2')
+const utilities_detail3 = document.querySelector('#utilities-deteail3')
+const utilities_detail4 = document.querySelector('#utilities-deteail4')
+const utilities_detail5 = document.querySelector('#utilities-deteail5')
+const utilities_detail6 = document.querySelector('#utilities-deteail6')
+
+for(let i = 0 ; i <property_utilities.length; i++){
+  const utilities_detail = property_utilities[i];
+  if(primary_no === utilities_detail.all_properties_id){
+    utilities_detail1.innerHTML =  utilities_detail.utilities1;
+    utilities_detail2.innerHTML =  utilities_detail.utilities2;
+    utilities_detail3.innerHTML =  utilities_detail.utilities3;
+    utilities_detail4.innerHTML =  utilities_detail.utilities4;
+    utilities_detail5.innerHTML =  utilities_detail.utilities5;
+    utilities_detail6.innerHTML =  utilities_detail.utilities6;
+}
+}
+
+const other_detail1 = document.querySelector('#other-deteail1') 
+const other_detail2 = document.querySelector('#other-deteail2')
+const other_detail3 = document.querySelector('#other-deteail3')
+const other_detail4 = document.querySelector('#other-deteail4')
+const other_detail5 = document.querySelector('#other-deteail5')
+const other_detail6 = document.querySelector('#other-deteail6')
+
+for(let i = 0 ; i <properties_other_features.length; i++){
+  const other_features = properties_other_features[i];
+  if(primary_no === other_features.all_properties_id){
+    other_detail1.innerHTML =  other_features.Other_Features1;
+    other_detail2.innerHTML =  other_features.Other_Features2;
+    other_detail3.innerHTML =  other_features.Other_Features3;
+    other_detail4.innerHTML =  other_features.Other_Features4;
+    other_detail5.innerHTML =  other_features.Other_Features5;
+    other_detail6.innerHTML =  other_features.Other_Features6;
+}
+}
+let currentUrl = window.location.href;
+if (currentUrl.indexOf('properties-details.html') > -1 ) {
+  
+ for(let i = 0; i < property_past_prices.length; i++){
+ const past_price = property_past_prices[i]
+ if(primary_no === past_price.all_properties_id){
+  // this is for the graph price of properties 
+  const xArray = [past_price.price_date1, past_price.price_date2, past_price.price_date3];
+  const yArray = [past_price.price_value1, past_price.price_value2, past_price.price_value3];
+  
+  const graph_data = [{
+    x:xArray,
+    y:yArray,
+    type:"bar"
+  }];
+
+  Plotly.newPlot("myPlot", graph_data);
+}
+}
+  
+  
+ 
+
+
+}
+
+}
+})
+})
