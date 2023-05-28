@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Way Properties</title>
+
+    
+    <!-- Favicon  -->
+    <link rel="icon" type="image/x-icon" href="./PICS/new-icon.png">
+
+    <!-- Bootstrap CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.css">
+    
+
+
+            <!-- custom.css -->
+
+            <link rel="stylesheet" href="adminstyles.css">
+
+
+
+</head>
+    <style>
+         .main-container, form, .input-group, .action-btn{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .left-side{
+            height: 90%;
+            border-radius: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn{
+            width: 100%;
+        }
+
+        label{
+  color: rgba(0, 0, 0, 1);
+}
+.fa-solid{
+    position: absolute;
+    top: 50px;
+}
+
+
+
+    </style>
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main-container">
+
+              <div class="left-side text-center login-container">
+                <form class="" action="" onsubmit="login(event)">
+                    <div class="input-group mb-3">
+                        <div class="name-input mb-4 position-relative ">
+                            <label class="mb-2 login-label" for="username">Enter Username</label>
+                            <input id="username" type="text" class="input-field r" placeholder="Enter the Username">
+                            <i class="fa-solid fa-user login-icon"></i>
+
+                        </div>
+                        <div class="name-input mb-4 position-relative ">
+                            <label class="mb-2 login-label" for="password">Enter Password</label>
+                            <input id="password" type="password" class="input-field" placeholder="Enter the Password">
+                            <i class="fa-solid fa-eye-slash login-icon"
+                            onmousedown="showpassword()"
+                            onmouseup="hidepassword()"></i>
+                        </div>
+                    </div>
+                    <div class="action-btn mb-3">
+                        <button type="submit" class="btn ">Log In</button>
+
+                    </div>
+                </form>
+                
+
+            </div>
+        </div>
+    </div>
+    <!-- <div class="wrapper">
+        <div class="main-container">
+            <div class="login">
+                <a href="index.html">
+                  <button class="login-style" 
+                  onmouseover="document.getElementById('login-details').style.display = 'block'" 
+                  onmouseout="document.getElementById('login-details').style.display = 'none'"
+                  >Home</button>
+                </a>
+                <p id="login-details" >Click here to go <br> back to home page.</p>
+                </div>
+            <div class="left-side" >
+               
+                <span>
+                    <p id="name-err" class="error"></p>
+                    <input type="text"  id="name" placeholder=  'Enter Your Full Name'
+                    class="input-field">
+                    <i class="fa-solid fa-user"></i>
+                    
+                </span>
+                
+                <span>
+                    <p id="email-err" class="error"></p>
+                    <input type="text" id="email"  placeholder=  'Enter Your Email Address'
+                    class="input-field">
+                    <i class="fa-solid fa-envelope"></i>
+                </span>
+                
+                <span>
+                    <p id="pass-err" class="error"></p>
+                    <input type="password"  id="password" placeholder=  'Enter a Strong Password'
+                    class="input-field">
+                    <i class="fa-solid fa-eye-slash"></i>
+                </span>
+               
+                <span>
+                    <p id="confirmpass-err" class="error"></p>
+                    <input type="password"  id="confirm-password" placeholder=  'Re-Enter your Password'
+                    class="input-field">
+                    <i class="fa-solid fa-eye-slash"></i>          
+                </span>
+               
+                    <button type="submit" class="btn" 
+                    onclick = 'accountinfo()'>Create Account</button>
+                    <div class="or">
+                    <div class="line"></div>
+                    <div class="txt">OR</div>
+                    <div class="line"></div>
+                    </div>
+                    <p class="txt">
+                        Already have a Account
+                    </p> 
+                      <div class="btn-box" >
+                        <a href="log in.html">
+                          <button type="submit" class="btn btn2">Log In</button>
+                        </a>
+                      </div>       
+                </div>
+
+        </div> -->
+                               <!-- jQuery -->
+                               <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+                               
+                               <!-- Bootstrap JavaScript -->
+                               <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                               
+
+                               <!-- <script src="signup.js" ></script> -->
+                               <!-- custom javacript  -->
+                               <script src="signup.js"></script>
+
+                </body>
+                </html>
